@@ -70,7 +70,7 @@ function mask_add()
 		mask_content.value = "";
 	}else
 	{
-		alert("掩码名或内容为空");
+		alert("The mask name or content is empty");
 	}
 	mask_list.selectedIndex = mask_list.options.length - 1;
 	save_mask_local();
@@ -95,7 +95,7 @@ function mask_remove()
 									(mask_list.options.length-1);
 	}else
 	{
-		alert("没有选中掩码");
+		alert("No mask is selected");
 	}
 	save_mask_local();
 }
@@ -155,17 +155,17 @@ function load_mask_local() //从空白加载设置
 
 function do_error(e)
 {
-	outinfo.innerHTML = "发生错误";
+	outinfo.innerHTML = "An error occurred";
 	outcontent.value = e.toString();
 }
 function do_cancel()
 {
-	outinfo.innerHTML = "取消操作";
+	outinfo.innerHTML = "Cancels the operation";
 }
 function do_success(files)
 {
 	redata = files; //存入全局数组
-	console.log("本次返回 %d 个文件，数据为 %o",
+	console.log("This time, %d files are returned, and the data is %o",
 		redata.value.length,
 		redata
 	);
@@ -177,11 +177,11 @@ function generate_output(files)
 	var mask = masks[mask_list.selectedIndex] || masks[0];
 	var filearr = files.value;
 	
-	outinfo.innerHTML = "Your Links Get:  " + filearr.length + " 个文件。"
+	outinfo.innerHTML = "Your Links Get:  " + filearr.length + " files."
 	if (filearr.some(function(item){
 		return item.shared == undefined || item.shared.scope != "anonymous";
 	})){
-		outinfo.innerHTML += " Files";
+		outinfo.innerHTML += " Changed Done!";
 	}
 
 	var outStrArr = filearr.map(function(item,index){
@@ -214,8 +214,8 @@ function showMask(str,file,index)
 					newTxt = newTxt.replace(mskO, "");
 			}catch(e)
 			{
-				alert("掩码异常，详情查看控制台");
-				console.error(mskO + " 掩码出现了异常情况",e);
+				alert("Mask exception, see the console for details");
+				console.error(mskO + " An anomaly occurred for the mask",e);
 			}
 		}
 	}
@@ -235,7 +235,7 @@ window.onload = function() //网页加载初始化
 
 	if (location.protocol !="https:" && location.hostname !="localhost" && location.hostname != "")
 	{
-		var goto = confirm("检测到你正在使用http模式，本应用要求使用https模式。\n是否自动跳转？");
+		var goto = confirm("Detected that you are using http mode, this application requires https mode.\nDo you jump automatically?");
 		if (goto)
 		{
 			location.protocol = "https:";
@@ -246,7 +246,7 @@ window.onload = function() //网页加载初始化
 }
 //OneDrive官方API格式
 function launchOneDrivePicker(action = "query"){
-	outinfo.innerHTML = "正在等待API返回数据";
+	outinfo.innerHTML = "Waiting for the API to return data";
 	var odOptions = {
 		clientId: "e2011a28-7697-438b-8d3c-8a82b8f96aec",
 		action: action, //share | download | query
