@@ -126,7 +126,7 @@ function load_mask_local() //从空白加载设置
 		((parseInt(GM_getValue("new-mask-version"),10) || 1)<curMaskVersion)
 	) //没有掩码数据，初始化默认配置。
 	{
-		addNewMask("Meens","${file.permissions[0].link.webUrl.replace(\"1drv.ms\",\"1drv.ws\")}");
+		addNewMask("官方图片下载直连（短期？）","${file[\"@microsoft.graph.downloadUrl\"].replace(/public\.\w+\.files/i,\"public.ch.files\")}");
 
 		addNewMask("普通外链","http://storage.live.com/items/${file.id}:/${file.name}");
 		addNewMask("最短链接","http://storage.live.com/items/${file.id}");
