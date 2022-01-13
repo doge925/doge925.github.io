@@ -14,12 +14,12 @@
 
 <body>
 	
-<div class="picker">
-	<h3>Get Link One Drive</h3>
+<div class="picker" style="width: 0px; height:0px; padding: 0px; margin: 0px; overflow: hidden;">
+	<!-- <h3>Get Link One Drive</h3>
 	<button class="openbtn" onClick="launchOneDrivePicker('query')">
 		<img src="images/cloud-white-18dp.svg">
-		<span class="oneDriveButton">Select Files</span>
-	</button>
+		<span class="oneDriveButton">Login OneDrive</span>
+	</button> -->
 	<!-- <button class="openbtn" onClick="launchOneDrivePicker('share')">
 		<img src="images/share-white-18dp.svg">
 		<span class="oneDriveButton">额外创建分享链接（配合1drv.ws使用）</span>
@@ -36,7 +36,13 @@
 		<!-- <div class="tip">▲以上掩码设置保存在浏览器本地</div> -->
 	</div>
 </div>
-<div class="output">
+
+<div class="output" style="width: 80%;">
+	<h3>Get Link One Drive</h3>
+	<button class="openbtn" onClick="launchOneDrivePicker('query')" style="margin:1%;">
+		<img src="images/cloud-white-18dp.svg">
+		<span class="oneDriveButton">Login OneDrive</span>
+	</button>
 	<!-- <h3>输出面板</h3> -->
 	<div class="outinfo"></div>
 	<textarea class="outcontent"></textarea>
