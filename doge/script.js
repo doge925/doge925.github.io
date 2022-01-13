@@ -177,11 +177,11 @@ function generate_output(files)
 	var mask = masks[mask_list.selectedIndex] || masks[0];
 	var filearr = files.value;
 	
-	outinfo.innerHTML = "共选择 " + filearr.length + " 个文件。"
+	outinfo.innerHTML = "Your Links Get:  " + filearr.length + " 个文件。"
 	if (filearr.some(function(item){
 		return item.shared == undefined || item.shared.scope != "anonymous";
 	})){
-		outinfo.innerHTML += "存在非公共权限文件，注意添加通行许可代码。";
+		outinfo.innerHTML += " Files";
 	}
 
 	var outStrArr = filearr.map(function(item,index){
